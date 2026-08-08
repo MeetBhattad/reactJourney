@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 
 function Card(props) {
   return (
-    <div>
+    <div className="card" style={{ border: "8px soild black", padding: "2px" }}>
       <img
         src="https://wittee.in/wp-content/uploads/2025/09/front-68cc0e54b7abd-Royal_Blue_XS_Oversized_T-shirt.jpg"
-        height="200px"
-        width="200px"
+        height="150px"
+        width="150px"
       />
       <div style={{ textAlign: "center" }}>
-        <h2>{props.cloth}</h2>
+        <h2 stlye={{ height: "10px" }}>{props.cloth}</h2>
         <h1>{props.offer}</h1>
         <h2>Shop Now!!</h2>
       </div>
@@ -47,6 +47,26 @@ const arr = [
   {
     id: 6,
     cloth: "Cargo",
+    offer: "10% off",
+  },
+  {
+    id: 7,
+    cloth: "Crop-top",
+    offer: "30% off",
+  },
+  {
+    id: 8,
+    cloth: "Sundress",
+    offer: "70% off",
+  },
+  {
+    id: 9,
+    cloth: "Tank-top",
+    offer: "50% off",
+  },
+  {
+    id: 10,
+    cloth: "henley",
     offer: "10% off",
   },
 ];
@@ -86,7 +106,11 @@ function Header() {
 function App() {
   return (
     <>
-      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <Header />
+      <div
+        className="middle"
+        style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}
+      >
         {arr.map((value, index) => (
           <Card key={index} cloth={value.cloth} offer={value.offer} />
         ))}
