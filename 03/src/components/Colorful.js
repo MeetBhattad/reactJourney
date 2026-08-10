@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 function Colorful() {
   const [color, setColor] = useState("black");
@@ -44,4 +44,4 @@ function Colorful() {
   );
 }
 
-export default Colorful;
+export default React.memo(Colorful);
