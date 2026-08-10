@@ -1,0 +1,48 @@
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Main() {
+  const [color, setColor] = useState("black");
+
+  document.body.style.backgroundColor = color;
+
+  return (
+    <>
+      <h1>Backgroung Color Changer</h1>
+      <div className="butt">
+        <button
+          style={{ backgroundColor: "red" }}
+          onClick={() => setColor("red")}
+        >
+          Red
+        </button>
+        <button
+          style={{ backgroundColor: "orange" }}
+          onClick={() => setColor("orange")}
+        >
+          Orange
+        </button>
+        <button
+          style={{ backgroundColor: "green" }}
+          onClick={() => setColor("green")}
+        >
+          Green
+        </button>
+        <button
+          style={{ backgroundColor: "blue" }}
+          onClick={() => setColor("blue")}
+        >
+          Blue
+        </button>
+        <button
+          style={{ backgroundColor: "pink" }}
+          onClick={() => setColor("pink")}
+        >
+          Pink
+        </button>
+      </div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Main />);
