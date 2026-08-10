@@ -7,7 +7,7 @@ function PasswordGenerator() {
   const [numberChanged, setNumberChange] = useState(false);
   const [charChanged, setCharChange] = useState(false);
 
-  function generatePassword() {
+  const generatePassword = useCallback(() => {
     let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (numberChanged) {
       str += "0123456789";
@@ -22,11 +22,11 @@ function PasswordGenerator() {
     }
 
     setPassword(pass);
-  }
+  }, [length, numberChanged, charChanged]);
 
   useEffect(() => {
     generatePassword();
-  }, [length, numberChanged, charChanged]);
+  }, [generatePassword]);
 
   return (
     <>
